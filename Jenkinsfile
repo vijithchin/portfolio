@@ -13,7 +13,7 @@ pipeline{
         }
         stage('execute'){
             steps{
-                sh 'docker run -d -p 9999:8080 portfolio:v1'
+                sh 'docker run -d -p 9999:8055 portfolio:v1'
             }
         }
     }
