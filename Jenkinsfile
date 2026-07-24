@@ -8,7 +8,7 @@ pipeline{
         }
         stage('build'){
             steps{
-                sh 'docker build -t portfolio:v1'
+                sh 'docker build -t portfolio:v1 .'
             }
         }
         stage('execute'){
