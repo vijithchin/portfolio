@@ -13,7 +13,7 @@
         }
         stage('delete'){
             steps{
-                sh 'docker rm road_runner'
+                sh 'docker rm road_runner || true'
             }
         }
         stage('execute'){
