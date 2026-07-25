@@ -1,4 +1,4 @@
-pipeline{
+	pipeline{
     agent any
     stages{
         stage('checkout'){
@@ -11,9 +11,14 @@ pipeline{
                 sh 'docker build -t portfolio:v1 .'
             }
         }
+        stage('delete'){
+            steps{
+                sh 'docker rm road_runner'
+            }
+        }
         stage('execute'){
             steps{
-                sh 'docker run -d -p 9999:8055 portfolio:v1'
+                sh 'docker run -d -p 9999:8055 --name road_runner portfolio:v1'
             }
         }
     }
