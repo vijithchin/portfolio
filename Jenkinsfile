@@ -14,7 +14,7 @@ pipeline{
         stage('delete'){
             steps{
 				sh 'docker stop road_runner || true'
-				sh 'docker system prune -a -y'            
+				sh 'docker image prune -f'            
 			}
         }
         stage('execute'){
