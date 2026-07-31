@@ -11,7 +11,6 @@ pipeline{
                 sh 'docker build -t portfolio:v1 .'
             }
         }
-		
         stage('delete'){
             steps{
 		sh 'docker stop road_runner || true'
