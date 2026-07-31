@@ -25,14 +25,14 @@ pipeline{
     }
     post{
         success{
-            emailext(to:'siddardhareddy456@gmail.com,vijithchin@gmail.com,svijith098@gmail.com',
+            emailext(to:'vijithchin@gmail.com',
                      subject:'Success Email',
-                     body:'This is a success email')
+                     body:'This is a success email for GIT_URL')
         }
         failure{
-            emailext(to:'siddardhareddy456@gmail.com,vijithchin@gmail.com,svijith098@gmail.com',
+            emailext(to:'vijithchin@gmail.com',
                      subject:'Failure Email',
-                     body:'This is a failure email')
+                     body:'This is a failure email GIT_URL')
         }
     }
 }
