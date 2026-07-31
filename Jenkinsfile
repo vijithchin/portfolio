@@ -15,7 +15,7 @@ pipeline{
             steps{
 				sh '''docker stop road_runner || true
 						docker rm road_runner || true
-						docker rm $(docker ps -aq)
+						docker rm $(docker ps -aq) || true
 						docker image prune -f'''            
 			}
         }
