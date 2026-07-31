@@ -14,9 +14,11 @@ pipeline{
         }
         stage('delete'){
             steps{
-		sh 'docker stop road_runner || true'
-                sh 'docker rm road_runner || true'
-            }
+				sh '''docker stop road_runner || true
+						docker rm road_runner || true
+						docker rm $(docker ps -aq) || true
+						docker image prune -f'''            
+			}
         }
         stage('execute'){
             steps{
@@ -28,12 +30,12 @@ pipeline{
         success{
             emailext(to:'vijithchin@gmail.com',
                      subject:'Success Email',
-                     body:'This is a success email for $GIT_URL')
+                     body:"This is a success email for ${env.GIT_URL}")
         }
         failure{
             emailext(to:'vijithchin@gmail.com',
                      subject:'Failure Email',
-                     body:'This is a failure email $GIT_URL')
+                     body:"This is a failure email ${env.GIT_URL}")
         }
     }
 }
