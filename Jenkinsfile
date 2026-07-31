@@ -23,4 +23,16 @@ pipeline{
             }
         }
     }
+    post{
+        success{
+            emailext(to:'vijithchin@gmail.com',
+                     subject:'Success Email',
+                     Body:'This is a success email')
+        }
+        failure{
+            emailext(to:'vijithchin@gmail.com',
+                     subject:'Failure Email',
+                     Body:'This is a failure email')
+        }
+    }
 }
