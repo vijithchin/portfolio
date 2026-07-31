@@ -13,8 +13,10 @@ pipeline{
         }
         stage('delete'){
             steps{
-				sh 'docker stop road_runner || true'
-				sh 'docker image prune -f'            
+				sh '''docker stop road_runner || true
+						docker rm road_runner || true
+						docker rm $(docker ps -aq)
+						docker image prune -f'''            
 			}
         }
         stage('execute'){
