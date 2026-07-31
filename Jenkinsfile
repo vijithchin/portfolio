@@ -6,6 +6,7 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/vijithchin/portfolio.git'
             }
         }
+
         stage('build'){
             steps{
                 sh 'docker build -t portfolio:v1 .'
