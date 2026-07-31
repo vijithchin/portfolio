@@ -27,12 +27,12 @@ pipeline{
         success{
             emailext(to:'vijithchin@gmail.com',
                      subject:'Success Email',
-                     body:'This is a success email for GIT_URL')
+                     body:'This is a success email for $GIT_URL')
         }
         failure{
             emailext(to:'vijithchin@gmail.com',
                      subject:'Failure Email',
-                     body:'This is a failure email GIT_URL')
+                     body:'This is a failure email $GIT_URL')
         }
     }
 }
