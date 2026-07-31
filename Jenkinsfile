@@ -13,9 +13,9 @@ pipeline{
         }
         stage('delete'){
             steps{
-		sh 'docker stop road_runner || true'
-                sh 'docker rm road_runner || true'
-            }
+				sh 'docker stop road_runner || true'
+				sh 'docker system prune -a'            
+			}
         }
         stage('execute'){
             steps{
