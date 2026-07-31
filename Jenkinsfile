@@ -25,12 +25,12 @@ pipeline{
     }
     post{
         success{
-            emailext(to:'vijithchin@gmail.com',
+            emailext(to:'siddardhareddy456@gmail.com',
                      subject:'Success Email',
                      body:'This is a success email')
         }
         failure{
-            emailext(to:'vijithchin@gmail.com',
+            emailext(to:'siddardhareddy456@gmail.com',
                      subject:'Failure Email',
                      body:'This is a failure email')
         }
