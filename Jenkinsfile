@@ -30,7 +30,7 @@ pipeline{
         success{
             emailext(to:'vijithchin@gmail.com,siddardhareddy456@gmail.com',
                      subject:'Success Email',
-                     body:"This is a success email for ${env.GIT_URL}")
+                     body:"This is a success email for ${env.GIT_URL}, ; http://15.252.18.21:9999/")
         }
         failure{
             emailext(to:'vijithchin@gmail.com',
