@@ -35,7 +35,7 @@ pipeline{
         failure{
             emailext(to:'vijithchin@gmail.com',
                      subject:'Failure Email',
-                     body:"This is a failure email ${env.GIT_URL}")
+                     body:"This is a failure email ${env.GIT_URL}; http://15.252.18.21:9999/")
         }
     }
 }
